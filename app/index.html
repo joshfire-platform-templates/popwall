@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Insert here title of my app</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script data-main="./" src="joshfire/adapters/browser/bootstrap.js"></script>
+    <script data-joshfire-bootstrap src="http://127.0.0.1:40021/bootstrap/4ed4b24582d630000000019a/auto/desktop/"></script>
+    <script data-joshfire-bootstrap>
+    	 Joshfire.factory.config.datasources = {"main":{"db":"example","col":"news","find":DatajsProxy.getCollection("example", "news", {}).find}};
+    </script>
+  </head>
+  <body>
+  	<header>
+    	<h1>Title</h1>
+    </header>
+
+    <div id="preview">Loading…</div>
+    <script>
+      Joshfire.debug = true;
+      // Here, select "phone" specifically
+      Joshfire.require(['app'], function(App) {
+        new App();
+      });
+    </script>
+  </body>
+</html>

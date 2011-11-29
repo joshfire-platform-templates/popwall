@@ -1,0 +1,56 @@
+{
+  "name": "popwall",
+  "version": "0.0.1",
+  "fullName": "Pop Wall",
+  "description": "A pretty wall with dynamic content",
+  "keywords": [
+    "wall"
+  ],
+  "joshfire": {
+    "images": {
+      "small":"http://i.imgur.com/7QFFS.png",
+      "big":"http://i.imgur.com/x5NbC.png"
+    },
+    "devices": [
+      {
+        "devices": "desktop",
+        "startfile": "app/index.html",
+        "images": "http://i.imgur.com/F2m22.png"
+      }
+    ],
+    "datasources": {
+      "main": {
+        "title": "Main source",
+        "description": "Content to be displayed"
+      }
+    },
+    "options": {
+      "schema": {
+        "headerhtml": {
+          "type": "string",
+          "title":"HTML to add before the content"
+        },
+        "footerhtml": {
+          "type": "string",
+          "title":"HTML to add after the content"
+        },
+        "headertitle": {
+          "type": "string",
+          "title":"Big title"
+        }
+      },
+      "form": [
+        "datasources.main",
+        "headertitle",
+        {
+          "key": "headerhtml",
+          "type": "textarea"
+        },
+        {
+          "key": "footerhtml",
+          "type": "textarea"
+        }
+      ]
+    }
+  }
+}
