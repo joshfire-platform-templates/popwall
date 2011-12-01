@@ -11,12 +11,16 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
           dataPath:         '/items/',
           noMouseAutoFocus: true,
           moveOnFocus:      true,
+          loadingTemplate:"Loading...",
           itemInnerTemplate:
             '<div class="clearfix">'+
             '    <h1 class="title"><%= item.title %></h1>'+
             '    <img src="<%= item.image %>" />'+
             '    <div class="description"><%= item.abstract %></div>'+
-            '</div>'
+            '</div>',
+          onBeforeInsert:function() {
+            document.getElementById("preview").style.display="none";
+          }
         }
       ];
     }

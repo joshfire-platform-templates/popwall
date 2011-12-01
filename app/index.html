@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Insert here title of my app</title>
+    <title>{{Joshfire.factory.config.template.options.headertitle}}</title>
     <link rel="stylesheet" href="css/style.css">
     <script data-main="./" src="joshfire/adapters/browser/bootstrap.js"></script>
     <script data-joshfire-bootstrap src="http://127.0.0.1:40021/bootstrap/4ed4b24582d630000000019a/auto/desktop/"></script>
     <script data-joshfire-bootstrap>
-    	 Joshfire.factory.config.datasources = {"main":{"db":"example","col":"news","find":DatajsProxy.getCollection("example", "news", {}).find}};
+    	Joshfire.factory.config.datasources = {
+	    	"main":{
+			   	"db":"twitter",
+			   	"col":"tweets",
+			   	"query":{"filter":{"user":"sylvinus","search":""}}
+		   	}
+		};
     </script>
+
   </head>
   <body>
   	<header>
-    	<h1>Title</h1>
+    	<h1>{{Joshfire.factory.config.template.options.headertitle}}</h1>
     </header>
 
+    {{Joshfire.factory.config.template.options.headerhtml}}
+
     <div id="preview">Loading…</div>
+    <div id="content"></div>
     <script>
       Joshfire.debug = true;
       // Here, select "phone" specifically
       Joshfire.require(['app'], function(App) {
-        new App();
+        new App({parentElement:"content"});
       });
     </script>
+
+    <div style="clear:both;">
+    	{{Joshfire.factory.config.template.options.footerhtml}}
+    </div>
   </body>
 </html>
