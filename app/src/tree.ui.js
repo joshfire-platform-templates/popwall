@@ -1,4 +1,4 @@
-Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list'], function(Class, UITree, List) {
+Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list','vendor/jquery.masonry'], function(Class, UITree, List, $) {
 
   return Class(UITree, {
 
@@ -20,6 +20,9 @@ Joshfire.define(['joshfire/class', 'joshfire/tree.ui', 'joshfire/uielements/list
             '</div>',
           onBeforeInsert:function() {
             document.getElementById("preview").style.display="none";
+          },
+          onAfterInsert:function(self) {
+            $("#"+self.htmlId+" ul").masonry({});
           }
         }
       ];
