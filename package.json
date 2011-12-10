@@ -9,7 +9,7 @@
   "joshfire": {
     "mustache":true,
     "images": {
-      "small":"http://i.imgur.com/o555k.png",
+      "small":"marketing/image-small.png",
       "big":"http://i.imgur.com/x5NbC.png"
     },
     "devices": [
