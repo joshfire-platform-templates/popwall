@@ -3,8 +3,13 @@
   <head>
     <title>{{Joshfire.factory.config.template.options.headertitle}}</title>
     <link rel="stylesheet" href="css/style.css">
-    <script data-main="./" src="joshfire/adapters/browser/bootstrap.js"></script>
-    <script data-joshfire-bootstrap src="http://127.0.0.1:40021/bootstrap/4ee2228932ba682e50000031/auto/desktop/"></script>
+    <script src="vendor/jquery.js"></script>
+    <script src="vendor/jquery.masonry.js"></script>
+    <script src="vendor/underscore.js"></script>
+    <script src="vendor/jquery.waypoints.js"></script>
+    <script src="vendor/spin.js"></script>
+    
+    <script data-joshfire-bootstrap src="http://127.0.0.1:40021/bootstrap/4ee79a668e23c0d1cd0036dd/auto/desktop/"></script>
     <script data-joshfire-bootstrap>
     	Joshfire.factory.config.datasources = {
 	    	"main":{
@@ -12,7 +17,8 @@
 			   	"col":"tweets",
 			   	"query":{"filter":{"user":"sylvinus","search":""}}
 		   	}
-		};
+		  };
+      Joshfire.factory.config.template.options.datafilter = "notareg";
     </script>
 
   </head>
@@ -23,18 +29,28 @@
 
     {{{Joshfire.factory.config.template.options.headerhtml}}}
 
-    <div id="preview">Loading…</div>
-    <div id="content"></div>
+
+    <ul id="content"></ul>
+    <div id="loading" style="clear:both;">Loading...</div>
+
     <script>
-      Joshfire.debug = true;
-      // Here, select "phone" specifically
-      Joshfire.require(['app'], function(App) {
-        new App({parentElement:"content"});
-      });
+      var opts = {
+        lines: 12, // The number of lines to draw
+        length: 7, // The length of each line
+        width: 4, // The line thickness
+        radius: 10, // The radius of the inner circle
+        color: '#000', // #rgb or #rrggbb
+        speed: 1, // Rounds per second
+        trail: 60, // Afterglow percentage
+        shadow: false // Whether to render a shadow
+      };
+      var target = document.getElementById('loading');
+      var spinner = new Spinner(opts).spin(target);
     </script>
 
-    <div style="clear:both;">
-    	{{{Joshfire.factory.config.template.options.footerhtml}}}
-    </div>
+    <script src="app.js"></script>
+    
+    {{{Joshfire.factory.config.template.options.footerhtml}}}
+    
   </body>
 </html>

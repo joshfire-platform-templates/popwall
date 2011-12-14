@@ -50,6 +50,10 @@ header h2 {
   font-size: 24px;
 }
 
+h2 {
+  font-size:16px;
+}
+
 li {
   float: left;
   list-style: none;
@@ -60,7 +64,7 @@ li {
   -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 3px 6px 0px;
   box-shadow: rgba(0, 0, 0, 0.5) 0 3px 6px 0px;
   background: #fff;
-  max-width: 220px;
+  max-width: 200px;
   -webkit-transform: rotate(-2deg);
   -moz-transform: rotate(-2deg);
   -o-transform: rotate(-2deg);
@@ -121,3 +125,12 @@ li:hover figcaption {
 .clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
+
+
+#content {
+  margin:20px 0px 20px 0px;
+}
+
+#loading {
+  margin-bottom:30px;
+}
