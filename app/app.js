@@ -52,6 +52,11 @@ $(function() {
 
     loadMore({limit:n,skip:pn*n},function(err,data) {
       
+      if (data.length===0) {
+        setTimeout(more,15*60*1000); //try again in 15 min 
+        return; 
+      }
+
       var appended = $(_.map(data,function(item) {
         return itemTemplate({"item":item});
       }).join(""));
