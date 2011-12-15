@@ -3,23 +3,26 @@
   <head>
     <title>{{Joshfire.factory.config.template.options.headertitle}}</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="vendor/jquery.js"></script>
-    <script src="vendor/jquery.masonry.js"></script>
-    <script src="vendor/underscore.js"></script>
-    <script src="vendor/jquery.waypoints.js"></script>
-    <script src="vendor/spin.js"></script>
     
-    <script data-joshfire-bootstrap src="http://127.0.0.1:40021/bootstrap/4ee79a668e23c0d1cd0036dd/auto/desktop/"></script>
+    
+    <script data-joshfire-bootstrap src="http://127.0.0.1:40021/bootstrap/4eea515db815644bae00002f/auto/desktop/"></script>
     <script data-joshfire-bootstrap>
     	Joshfire.factory.config.datasources = {
 	    	"main":{
 			   	"db":"twitter",
 			   	"col":"tweets",
-			   	"query":{"filter":{"user":"sylvinus","search":""}}
+			   	"query":{"filter":{"user":"sylvinus","search":""}},
+          "runatclient":true
 		   	}
 		  };
       Joshfire.factory.config.template.options.datafilter = "notareg";
     </script>
+
+    <!--<script src="vendor/jquery.js"></script>-->
+    <script src="vendor/jquery.masonry.js"></script>
+    <script src="vendor/underscore.js"></script>
+    <script src="vendor/jquery.waypoints.js"></script>
+    <script src="vendor/spin.js"></script>
 
   </head>
   <body>

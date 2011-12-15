@@ -1,7 +1,7 @@
 $(function() {
   
   var itemTemplate = _.template('<li><div class="clearfix">'+
-      '    <h2 class="title"><%= item.content %></h2>'+
+      '    <h2 class="title"><%= item.name %></h2>'+
       '    <% if (item.image) { %><img src="<%= item.image.contentURL %>" /><% } %>'+
       '    <div class="description"><%= item.description %></div>'+
       '</div></li>');
@@ -49,10 +49,12 @@ $(function() {
   
   
   var more = function() {
+    $("#loading").show();
 
     loadMore({limit:n,skip:pn*n},function(err,data) {
       
       if (data.length===0) {
+        $("#loading").hide();
         setTimeout(more,15*60*1000); //try again in 15 min. TODO improve heuristrics 
         return; 
       }
