@@ -1,7 +1,7 @@
 $(function() {
   
   var itemTemplate = _.template('<li><div class="clearfix">'+
-      '    <h2 class="title"><%= item.content %></h2>'+
+      '    <h2 class="title"><%= item.name %></h2>'+
       '    <% if (item.image) { %><img src="<%= item.image.contentURL %>" /><% } %>'+
       '    <div class="description"><%= item.description %></div>'+
       '</div></li>');
