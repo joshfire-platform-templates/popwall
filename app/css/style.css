@@ -16,42 +16,36 @@ a img {
 }
 
 body {
-  background: url(../img/brushed_alu.png) fixed;
+  background: url(../img/brushed_alu.png) fixed ;
   width: 960px;
   margin: auto;
-  font: 12px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  color: #171717;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
 }
 
 header {
   text-align: center;
-  font-family: "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 30px;
-  color: #fff;
-  text-shadow: 0 1px 0 #ccc, 
-               0 2px 0 #c9c9c9,
-               0 3px 0 #bbb,
-               0 4px 0 #b9b9b9,
-               0 5px 0 #aaa,
-               0 6px 1px rgba(0,0,0,.1),
-               0 0 5px rgba(0,0,0,.1),
-               0 1px 3px rgba(0,0,0,.3),
-               0 3px 5px rgba(0,0,0,.2),
-               0 5px 10px rgba(0,0,0,.25),
-               0 10px 10px rgba(0,0,0,.2),
-               0 20px 20px rgba(0,0,0,.15);
-}
+  color: #171717;
+  font-weight: 600;
+  
+ }
 
 header h1 {
   margin: 0.2em 0 0;
 }
 
 header h2 {
-  margin-top: 0;
+  margin-top: 10px;
   font-size: 24px;
 }
 
 h2 {
-  font-size:16px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 300;
 }
 
 li {
@@ -60,10 +54,11 @@ li {
   margin: 10px;
   padding: 10px;
   z-index: 1;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 3px 6px 0px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 3px 6px 0px;
-  box-shadow: rgba(0, 0, 0, 0.5) 0 3px 6px 0px;
-  background: #fff;
+  
+
+	
+  background-image: -webkit-linear-gradient(left top, rgb(252,252,252) 61%, rgb(242,242,242) 97%);
+  
   max-width: 200px;
   -webkit-transform: rotate(-2deg);
   -moz-transform: rotate(-2deg);
@@ -73,6 +68,15 @@ li {
   -moz-transition: -moz-transform .3s linear;
   -o-transition: -o-transform .3s linear;
   transition: transform .3s linear;
+  
+  -moz-box-shadow: 1px 1px 7px 1px #dadada;
+  -webkit-box-shadow: 1px 1px 7px 1px #dadada;
+  -o-box-shadow: 1px 1px 7px 1px #dadada;
+  box-shadow: 1px 1px 7px 1px #dadada;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+
 }
 
 li:nth-child(even) {
