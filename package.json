@@ -10,13 +10,14 @@
     "mustache":true,
     "images": {
       "small":"marketing/image-small.png",
-      "big":"http://i.imgur.com/x5NbC.png"
+      "big":"marketing/image-big.png"
     },
     "devices": [
       {
         "devices": "desktop",
         "startfile": "app/index.html",
-        "images": "http://i.imgur.com/F2m22.png"
+        "images": "marketing/desktop.png", 
+        "screenshots" : ["marketing/screenshot.png"]
       }
     ],
     "datasources": {
