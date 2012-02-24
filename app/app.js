@@ -2,8 +2,7 @@ $(function() {
   
   var itemTemplate = _.template('<li><div class="clearfix">'+
       '    <h2 class="title"><%= item.name %></h2>'+
-      '    <% if (item.image) { %><img src="<%= item.image.contentURL %>" /><% } %>'+
-      '    <% else if (item.contentURL) { %><img src="<%= item.contentURL %>" /><% } %>'+
+      '    <% if (item.image || item.contentURL) { %><img src="<%= item.image.contentURL || item.contentURL %>" /><% } %>'+
       '    <div class="description"><%= item.description %></div>'+
       '</div></li>');
 
