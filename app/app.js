@@ -40,7 +40,7 @@ $(function() {
   var addWP = function() {
       
     $("#loading").waypoint(function() {
-      more();
+      //more();
     },{
       offset:'100%',
       triggerOnce:true
@@ -68,12 +68,15 @@ $(function() {
       if (pn===0) {
         cnt.imagesLoaded(function(){
           cnt.masonry();
-          addWP();
+
+          // tidoust (2012-04-26): disabled waypoint as datasources do not yet support pagination
+          //addWP();
         });
       } else {
         cnt.imagesLoaded(function(){
           cnt.masonry("appended",appended);
-          addWP();
+          // tidoust (2012-04-26): disabled waypoint as datasources do not yet support pagination
+          //addWP();
         });
       }
       pn++;
