@@ -77,7 +77,6 @@
       "form": [
         "datasources.main",
         {
-          
           "type": "selectfieldset",
           "title": "Main title type",
           "items": [
@@ -86,7 +85,7 @@
               "legend": "Text"
             },
             {
-              "key": "logo",
+              "key": "headerlogo",
               "legend": "Logo",
               "type": "file-hosted-public"
             }
