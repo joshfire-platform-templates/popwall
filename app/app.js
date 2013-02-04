@@ -19,7 +19,7 @@ $(function() {
     $("#"+item).html(Joshfire.factory.config.template.options[item]||"");
   });
 
-  var autorefresh =  10;//Joshfire.factory.config.template.options.autorefresh;
+  var autorefresh =  Joshfire.factory.config.template.options.autorefresh;
 
   var pn=0;
   var n = 50;
