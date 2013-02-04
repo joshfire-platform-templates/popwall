@@ -7,6 +7,18 @@ $(function() {
       '</div></li>');
 
 
+  // For local testing
+  // we replace mustache values directly
+  var parameters = [
+    "headertitle",
+    "headerhtml",
+    "footerhtml"
+  ];
+
+  _.map(parameters, function (item) {
+    $("#"+item).html(Joshfire.factory.config.template.options[item]||"");
+  });
+
   var pn=0;
   var n = 50;
 
@@ -20,43 +32,46 @@ $(function() {
 
     ds.find(query, function (err, data){
 
-      var filteredItems = [];
+      var filteredItems, filter, items;
 
-      var filter = Joshfire.factory.config.template.options.datafilter;
+      if (err) {
+        callback(err, null);
+      }
 
-      var items = _.map(data.entries, function(item, id) {
-        if (!filter || ((item.name||"").indexOf(filter)>=0 || (item.content||"").indexOf(filter)>=0)) {
-          filteredItems.push(item);
-        } 
-      });
+      if (data) {
 
-      callback(null, filteredItems);
+        filteredItems = [];
 
+        filter = Joshfire.factory.config.template.options.datafilter;
+
+        items = _.map(data.entries, function(item, id) {
+          if (!filter || ((item.name||"").indexOf(filter)>=0 || (item.content||"").indexOf(filter)>=0)) {
+            filteredItems.push(item);
+          }
+        });
+
+        callback(null, filteredItems);
+      }
     });
   };
-
-
-
-  var addWP = function() {
-      
-    $("#loading").waypoint(function() {
-      //more();
-    },{
-      offset:'100%',
-      triggerOnce:true
-    });
-  };
-  
   
   var more = function() {
     $("#loading").show();
 
-    loadMore({limit:n,skip:pn*n},function(err,data) {
+    loadMore({
+      limit:n,
+      skip:pn*n
+    }, function(err,data) {
       
+      $("#loading").hide();
+
+      if (err) {
+        return;
+      }
+
       if (data.length===0) {
-        $("#loading").hide();
-        setTimeout(more,15*60*1000); //try again in 15 min. TODO improve heuristrics 
-        return; 
+        setTimeout(more,15*60*1000); //try again in 15 min. TODO improve heuristrics
+        return;
       }
 
       var appended = $(_.map(data,function(item) {
