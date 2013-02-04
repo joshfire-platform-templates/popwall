@@ -6,20 +6,37 @@ $(function() {
       '    <div class="description"><%= item.description %></div>'+
       '</div></li>');
 
+  var options = Joshfire.factory.config.template.options;
 
-  // For local testing
-  // we replace mustache values directly
-  var parameters = [
-    "headertitle",
-    "headerhtml",
-    "footerhtml"
-  ];
+  // Set UI
+  (function () {
 
-  _.map(parameters, function (item) {
-    $("#"+item).html(Joshfire.factory.config.template.options[item]||"");
-  });
+      // For local testing
+      // we replace mustache values directly
+      var parameters = [
+        "headerhtml",
+        "footerhtml"
+      ];
 
-  var autorefresh =  Joshfire.factory.config.template.options.autorefresh;
+      _.map(parameters, function (item) {
+        $("#"+item).html(options[item]||"");
+      });
+
+      if (options.backgroundcolor) {
+        $("body").css("background",options.backgroundcolor);
+      } else if (options.backgroundimage) {
+        $("body").css("background","url("+options.backgroundimage.url+")");
+      }
+
+      if (options.headertitle) {
+        $("<h1></h1>").appendTo("#header").text(options.headertitle);
+      } else if (options.headerlogo) {
+        $("<img />").appendTo("#header").attr("src",options.headerlogo.url);
+      }
+
+  })();
+
+  var autorefresh =  options.autorefresh;
 
   var pn=0;
   var n = 50;
