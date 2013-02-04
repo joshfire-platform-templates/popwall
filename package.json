@@ -77,7 +77,7 @@
       "form": [
         "datasources.main",
         {
-          "key": "headertype",
+          // "key": "headertype", // Not avail on prod env
           "type": "selectfieldset",
           "title": "Main title type",
           "items": [
@@ -93,7 +93,7 @@
           ]
         },
         {
-          "key": "backgroundtype",
+          // "key": "backgroundtype", // Not avail on prod env
           "type": "selectfieldset",
           "title": "Background type",
           "items": [
