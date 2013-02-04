@@ -41,14 +41,73 @@
           "type": "string",
           "title":"HTML to add after the content"
         },
+        "headertype": {
+          "type": "string",
+          "title": "What to use as the main title",
+          "enum": [
+            "Text",
+            "Logo"
+          ]
+        },
         "headertitle": {
           "type": "string",
           "title":"Big title"
+        },
+        "headerlogo": {
+          "type": "object",
+          "title": "Logo image"
+        },
+        "backgroundtype": {
+          "type": "string",
+          "title": "Background type",
+          "enum": [
+            "Color",
+            "Image"
+          ]
+        },
+        "backgroundcolor": {
+          "type": "string",
+          "title": "Background color (hexadecimal)"
+        },
+        "backgroundimage": {
+          "type": "object",
+          "title": "Background image"
         }
       },
       "form": [
         "datasources.main",
-        "headertitle",
+        {
+          
+          "type": "selectfieldset",
+          "title": "Main title type",
+          "items": [
+            {
+              "key": "headertitle",
+              "legend": "Text"
+            },
+            {
+              "key": "logo",
+              "legend": "Logo",
+              "type": "file-hosted-public"
+            }
+          ]
+        },
+        {
+          "key": "backgroundtype",
+          "type": "selectfieldset",
+          "title": "Background type",
+          "items": [
+            {
+              "key": "backgroundcolor",
+              "legend": "Text"
+            },
+            {
+              "key": "backgroundimage",
+              "legend": "Image",
+              "type": "file-hosted-public"
+            }
+          ]
+        },
         "datafilter",
         {
           "key": "headerhtml",
