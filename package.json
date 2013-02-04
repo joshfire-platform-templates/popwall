@@ -51,7 +51,7 @@
         },
         "headertitle": {
           "type": "string",
-          "title":"Big title"
+          "title":"Main title"
         },
         "headerlogo": {
           "type": "object",
@@ -77,6 +77,7 @@
       "form": [
         "datasources.main",
         {
+          "key": "headertype",
           "type": "selectfieldset",
           "title": "Main title type",
           "items": [
