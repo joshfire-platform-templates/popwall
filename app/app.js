@@ -26,6 +26,8 @@ $(function() {
         $("body").css("background",options.backgroundcolor);
       } else if (options.backgroundimage) {
         $("body").css("background","url("+options.backgroundimage.url+")");
+      } else {
+        $("body").css("background","url(img/brushed_alu.png) fixed");
       }
 
       if (options.headertitle) {
@@ -75,7 +77,7 @@ $(function() {
   };
   
   var more = function() {
-
+    console.log("Refresh");
     loadMore({
       limit:n,
       skip:pn*n
