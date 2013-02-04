@@ -72,6 +72,11 @@
         "backgroundimage": {
           "type": "object",
           "title": "Background image"
+        },
+        "autorefresh": {
+          "type": "integer",
+          "title": "Automatic refresh timeout (in seconds, 0 to disable)",
+          "default": 0
         }
       },
       "form": [
@@ -107,6 +112,7 @@
           ]
         },
         "datafilter",
+        "autorefresh",
         {
           "key": "headerhtml",
           "type": "wysihtml5"
