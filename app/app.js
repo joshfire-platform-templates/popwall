@@ -19,6 +19,8 @@ $(function() {
     $("#"+item).html(Joshfire.factory.config.template.options[item]||"");
   });
 
+  var autorefresh =  10;//Joshfire.factory.config.template.options.autorefresh;
+
   var pn=0;
   var n = 50;
 
@@ -56,21 +58,17 @@ $(function() {
   };
   
   var more = function() {
-    $("#loading").show();
 
     loadMore({
       limit:n,
       skip:pn*n
     }, function(err,data) {
-      
-      $("#loading").hide();
 
-      if (err) {
-        return;
+      if (autorefresh) {
+        setTimeout(more, autorefresh * 1000);
       }
 
-      if (data.length===0) {
-        setTimeout(more,15*60*1000); //try again in 15 min. TODO improve heuristrics
+      if (err || data.length === 0) {
         return;
       }
 
