@@ -1,6 +1,6 @@
 {
   "name": "popwall",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "fullName": "Pop Wall",
   "description": "A pretty wall with dynamic content.\n\nThe template displays RSS content, photos and/or status messages and thus works well with a number of datasources (e.g. Flickr, RSS, Twitter). It may not yield good results with more specific datasources such as with a KML feed though.",
   "keywords": [

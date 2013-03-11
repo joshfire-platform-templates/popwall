@@ -77,17 +77,18 @@ $(function() {
   };
   
   var more = function() {
-    console.log("Refresh");
     loadMore({
       limit:n,
       skip:pn*n
     }, function(err,data) {
-
       if (autorefresh) {
         setTimeout(more, autorefresh * 1000);
       }
 
       if (err || data.length === 0) {
+        $("#content").html('<header><h2>An error occured. The app will reload automatically. Please wait.</h2></header>');
+        //Better refresh in one minute
+        setTimeout(function(){window.location.reload();}, 60000);
         return;
       }
 

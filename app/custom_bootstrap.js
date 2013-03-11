@@ -8,7 +8,7 @@
     addons: {}
   };
   Joshfire.factory.config.deploy = {"flags":{"web":true},"type":"gandisimplehosting","id":"510fe25b622fa902000000f1","env":"live"};
-  Joshfire.factory.config.datasources = {"main":{"name":"Twitter","db":"operator","col":"updatelinks","query":{"filter":{"datasources":{"main":{"name":"Twitter","db":"twitter","col":"tweets","query":{"filter":{"search":"joshfire"}},"runatclient":true,"missingKeys":[],"outputType":"Article/Status","runtime":"browser"}},"action":"addtarget"}},"outputType":"Article/Status","runtime":"browser"}};
+  Joshfire.factory.config.datasources = {"main":{"name":"Twitter","db":"operator","col":"updatelinks","query":{"filter":{"datasources":{"main":{"name":"Twitter","db":"twitter","col":"tweets","query":{"filter":{"search":"joshfire"}},"runatclient":false,"missingKeys":[],"outputType":"Article/Status","runtime":"browser"}},"action":"addtarget"}},"outputType":"Article/Status","runtime":"browser"}};
   Joshfire.factory.config.addons = [{"name":"splashscreen","options":{"web-mode":"spinner"},"hooks":["loaded"]}];
   window.Joshfire = Joshfire;
 
